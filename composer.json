@@ -1,5 +1,5 @@
 {
-	"name": "kdyby/redis",
+	"name": "fallesk/redis",
 	"type": "library",
 	"description": "Redis storage for Nette Framework",
 	"keywords": ["nette", "kdyby", "redis", "client", "cache"],
@@ -23,6 +23,7 @@
 		"nette/caching": "~3.0",
 		"nette/http": "~2.4.7 || ~3.0",
 		"nette/utils": "~3.0"
+		"jenner/redis_sentinel": "*"
 	},
 	"suggest": {
 		"ext-redis": "The php redis extension https://github.com/nicolasff/phpredis/ is required for connecting to redis server"

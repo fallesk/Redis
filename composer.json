@@ -20,9 +20,9 @@
 		"php": "^7.1",
 		"ext-redis": "*",
 		"nette/di": "~2.4.10 || ~3.0",
-		"nette/caching": "~3.0",
+		"nette/caching": "~2.5",
 		"nette/http": "~2.4.7 || ~3.0",
-		"nette/utils": "~3.0",
+		"nette/utils": "~2.4",
 		"jenner/redis_sentinel": "*"
 	},
 	"suggest": {
@@ -54,7 +54,7 @@
 	"minimum-stability": "dev",
 	"extra": {
 		"branch-alias": {
-			"dev-master": "5.0-dev"
+			"dev-master": "6.0-dev"
 		},
 		"typo3/class-alias-loader": {
 			"class-alias-maps": [

@@ -15,6 +15,7 @@ namespace Kdyby\Redis;
 use Kdyby\Redis\Driver\PhpRedisDriver;
 use Redis;
 use Tracy\Debugger;
+use Jenner\RedisSentinel;
 
 /**
  * <code>
@@ -231,8 +232,15 @@ class RedisClient implements \ArrayAccess
 	 */
 	public function __construct(string $host = '127.0.0.1', int $port = 6379, int $database = 0, int $timeout = 10, ?string $auth = NULL, bool $persistent = FALSE)
 	{
-		$this->host = $host;
-		$this->port = $port;
+		
+		/* get address from sentinel */
+		$sentinel = new RedisSentinel\Sentinel();
+		$sentinel->connect($host, $port);
+		$address = $sentinel->getMasterAddrByName('mymaster');
+
+
+		$this->host = $address['ip'];
+		$this->port = $address['port'];
 		$this->database = $database;
 		$this->timeout = $timeout;
 		$this->auth = $auth;
